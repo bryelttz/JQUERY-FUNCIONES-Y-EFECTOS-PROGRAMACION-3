@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manipular clases con jQuery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 2rem auto;
+      max-width: 760px;
+      padding: 0 1rem;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 0.55rem 0.8rem;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 4px;
+      color: white;
+    }
+
+    .btn-success {
+      background: #198754;
+    }
+
+    .btn-danger {
+      background: #dc3545;
+    }
+
+    .btn-primary {
+      background: #0d6efd;
+    }
+
+    #btnGuardar {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+    }
+
+    #resultado {
+      min-height: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Manipular clases con jQuery</h1>
+  <p>Prueba cada operación y observa cómo cambian las clases del botón.</p>
+
+  <button id="btnGuardar" class="btn">Guardar</button>
+  <p>Clases actuales: <code id="clasesActuales"></code></p>
+
+  <div class="botones">
+    <button type="button" id="agregar">addClass('btn-success')</button>
+    <button type="button" id="quitar">removeClass('btn-danger')</button>
+    <button type="button" id="encadenar">removeClass().addClass()</button>
+    <button type="button" id="reemplazar">attr('class', 'btn btn-danger')</button>
+    <button type="button" id="alternar">toggleClass('btn-danger')</button>
+  </div>
+
+  <p id="resultado" aria-live="polite"></p>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    const $botonGuardar = $("#btnGuardar");
+
+    function actualizarEstado(mensaje) {
+      $("#clasesActuales").text($botonGuardar.attr("class"));
+      $("#resultado").text(mensaje);
+    }
+
+    $("#agregar").on("click", function () {
+      $botonGuardar.addClass("btn-success");
+      actualizarEstado("Se agregó btn-success sin quitar las clases existentes.");
+    });
+
+    $("#quitar").on("click", function () {
+      $botonGuardar.removeClass("btn-danger");
+      actualizarEstado("Se quitó btn-danger, si estaba asignada.");
+    });
+
+    $("#encadenar").on("click", function () {
+      $botonGuardar.removeClass("btn-danger").addClass("btn-primary");
+      actualizarEstado("Se quitó btn-danger y se agregó btn-primary en una cadena.");
+    });
+
+    $("#reemplazar").on("click", function () {
+      $botonGuardar.attr("class", "btn btn-danger");
+      actualizarEstado("Se reemplazaron todas las clases por btn btn-danger.");
+    });
+
+    $("#alternar").on("click", function () {
+      $botonGuardar.toggleClass("btn-danger");
+      actualizarEstado("Se alternó la clase btn-danger.");
+    });
+
+    actualizarEstado("El botón comienza con la clase btn.");
+  </script>
+</body>
+</html>

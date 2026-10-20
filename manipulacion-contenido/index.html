@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manipulación de contenido con jQuery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 2rem auto;
+      max-width: 760px;
+      padding: 0 1rem;
+    }
+
+    section {
+      border-bottom: 1px solid #ccc;
+      padding: 0.5rem 0 1rem;
+    }
+
+    button {
+      cursor: pointer;
+      margin: 0.25rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    input {
+      padding: 0.5rem;
+    }
+
+    .ejemplo-html {
+      background: #f0f4f8;
+      padding: 0.75rem;
+    }
+
+    #resultado {
+      min-height: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Manipulación de contenido con jQuery</h1>
+  <p>Prueba cómo obtener y establecer texto, contenido HTML y el valor de un campo.</p>
+
+  <section>
+    <h2>.text()</h2>
+    <p id="textoEjemplo">Este es un <strong>texto de ejemplo</strong>.</p>
+    <button type="button" id="leerTexto">Obtener texto</button>
+    <button type="button" id="establecerTexto">Establecer texto</button>
+  </section>
+
+  <section>
+    <h2>.html()</h2>
+    <div id="htmlEjemplo" class="ejemplo-html">Este contenido tiene <strong>HTML</strong>.</div>
+    <button type="button" id="leerHtml">Obtener HTML</button>
+    <button type="button" id="establecerHtml">Establecer HTML</button>
+  </section>
+
+  <section>
+    <h2>.val()</h2>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" value="Ana">
+    <button type="button" id="leerValor">Obtener valor</button>
+    <button type="button" id="establecerValor">Establecer valor</button>
+  </section>
+
+  <p id="resultado" aria-live="polite"></p>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    function mostrarResultado(mensaje) {
+      $("#resultado").text(mensaje);
+    }
+
+    $("#leerTexto").on("click", function () {
+      mostrarResultado("Texto obtenido: " + $("#textoEjemplo").text());
+    });
+
+    $("#establecerTexto").on("click", function () {
+      $("#textoEjemplo").text("El contenido ahora es texto plano.");
+      mostrarResultado("Se estableció texto plano con .text().");
+    });
+
+    $("#leerHtml").on("click", function () {
+      mostrarResultado("HTML obtenido: " + $("#htmlEjemplo").html());
+    });
+
+    $("#establecerHtml").on("click", function () {
+      $("#htmlEjemplo").html("Contenido con <strong>HTML</strong> establecido con jQuery.");
+      mostrarResultado("Se estableció contenido HTML con .html().");
+    });
+
+    $("#leerValor").on("click", function () {
+      mostrarResultado("Valor obtenido: " + $("#nombre").val());
+    });
+
+    $("#establecerValor").on("click", function () {
+      $("#nombre").val("Carlos");
+      mostrarResultado("El campo ahora contiene: " + $("#nombre").val());
+    });
+  </script>
+</body>
+</html>
