@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Objeto FormData</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 2rem auto;
+      max-width: 680px;
+      padding: 0 1rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    input,
+    textarea,
+    button {
+      font: inherit;
+      padding: 0.5rem;
+    }
+
+    #resultado {
+      background: #f0f4f8;
+      min-height: 2rem;
+      padding: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Objeto FormData</h1>
+  <p>
+    <code>FormData</code> recopila los campos de un formulario como pares
+    nombre-valor, útiles para enviar datos a un servidor.
+  </p>
+
+  <form id="formulario">
+    <label>
+      Nombre
+      <input name="nombre" type="text" required>
+    </label>
+
+    <label>
+      Correo electrónico
+      <input name="correo" type="email" required>
+    </label>
+
+    <label>
+      Mensaje
+      <textarea name="mensaje" rows="4" required></textarea>
+    </label>
+
+    <label>
+      Archivo (opcional)
+      <input name="archivo" type="file">
+    </label>
+
+    <button type="submit">Crear FormData y ver contenido</button>
+  </form>
+
+  <h2>Datos recopilados</h2>
+  <pre id="resultado" aria-live="polite">Completa el formulario y envíalo para ver sus datos.</pre>
+
+  <script>
+    const formulario = document.querySelector("#formulario");
+    const resultado = document.querySelector("#resultado");
+
+    formulario.addEventListener("submit", function (evento) {
+      evento.preventDefault();
+
+      const datos = new FormData(formulario);
+      const lineas = [];
+
+      datos.forEach(function (valor, nombre) {
+        if (valor instanceof File) {
+          lineas.push(nombre + ": " + (valor.name || "(sin archivo)"));
+          return;
+        }
+
+        lineas.push(nombre + ": " + valor);
+      });
+
+      resultado.textContent = lineas.join("\n");
+    });
+  </script>
+</body>
+</html>
