@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto slideDown</title>
+<body>
+  <h1>slideDown()</h1>
+  <p>Despliega hacia abajo un elemento que está oculto.</p>
+  <button id="accion">Desplegar</button>
+  <p id="objetivo" style="display: none; padding: 20px; background: lightblue;">¡Me desplegué hacia abajo!</p>
+  <p id="resultado"></p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").slideDown(600, function () {
+        $("#resultado").text("Desplegado. El callback se ejecutó al terminar.");
+      });
+    });
+  </script>
+</body>
+</html>

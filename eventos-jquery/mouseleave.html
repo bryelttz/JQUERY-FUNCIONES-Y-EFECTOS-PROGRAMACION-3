@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento mouseleave</title>
+<body>
+  <h1>mouseleave</h1>
+  <p>Se activa cuando el puntero sale del elemento.</p>
+  <div id="objetivo" style="padding: 40px; width: 220px; background: lightblue;">Entra y sal de aqui</div>
+  <p id="resultado">Mueve el puntero fuera del recuadro.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar:
+    $("#objetivo").on("mouseleave", function () { $("#resultado").text("¡El puntero salio!"); });
+  </script>
+</body>
+</html>

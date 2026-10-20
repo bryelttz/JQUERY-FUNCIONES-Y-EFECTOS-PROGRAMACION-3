@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto show</title>
+<body>
+  <h1>show()</h1>
+  <p>Muestra el elemento progresivamente. La velocidad se indica en milisegundos o como "slow"/"fast".</p>
+  <button id="accion">Mostrar</button>
+  <p id="objetivo" style="display: none; padding: 20px; background: lightblue;">¡Ahora estoy visible!</p>
+  <p id="resultado"></p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").show("slow", function () {
+        $("#resultado").text("Mostrado. El callback se ejecutó al terminar.");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto hide</title>
+<body>
+  <h1>hide()</h1>
+  <p>Oculta el elemento progresivamente. La velocidad se indica en milisegundos o como "slow"/"fast".</p>
+  <button id="accion">Ocultar</button>
+  <p id="objetivo" style="padding: 20px; background: lightblue;">Este elemento se ocultará.</p>
+  <p id="resultado"></p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").hide(600, function () {
+        $("#resultado").text("Ocultado. El callback se ejecutó al terminar.");
+      });
+    });
+  </script>
+</body>
+</html>

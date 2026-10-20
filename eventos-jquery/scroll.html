@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento scroll</title>
+<body style="min-height: 1800px;">
+  <h1>scroll</h1>
+  <p>Se activa cuando desplazas la pagina. Baja un poco para probar.</p>
+  <p id="resultado">Aun no desplazaste la pagina.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar:
+    $(window).on("scroll", function () { $("#resultado").text("Desplazamiento vertical: " + window.scrollY); });
+  </script>
+</body>
+</html>

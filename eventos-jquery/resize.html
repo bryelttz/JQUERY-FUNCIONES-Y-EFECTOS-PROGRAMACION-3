@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento resize</title>
+<body>
+  <h1>resize</h1>
+  <p>Se activa cuando cambias el tamano de la ventana del navegador.</p>
+  <p id="resultado">Cambia el tamano de la ventana para probar.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar:
+    $(window).on("resize", function () { $("#resultado").text("Ancho de ventana: " + window.innerWidth); });
+  </script>
+</body>
+</html>

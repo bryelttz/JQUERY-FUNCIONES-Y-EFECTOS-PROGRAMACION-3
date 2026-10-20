@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto slideToggle</title>
+<body>
+  <h1>slideToggle()</h1>
+  <p>Alterna entre plegar y desplegar el elemento.</p>
+  <button id="accion">Alternar plegado</button>
+  <p id="objetivo" style="padding: 20px; background: lightblue;">Haz clic para plegarme o desplegarme.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").slideToggle(600);
+    });
+  </script>
+</body>
+</html>

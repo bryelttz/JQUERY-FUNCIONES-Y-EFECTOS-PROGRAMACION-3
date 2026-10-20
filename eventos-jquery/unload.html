@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento unload</title>
+<body>
+  <h1>unload</h1>
+  <p>Se relaciona con salir de una pagina, pero esta obsoleto y los navegadores limitan su uso.</p>
+  <p>No es fiable para mostrar mensajes ni guardar datos. Para proyectos nuevos, evita este evento.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Solo para reconocer la sintaxis; no hace falta probarlo:
+    $(window).on("unload", function () { console.log("Saliendo de la pagina"); });
+  </script>
+</body>
+</html>

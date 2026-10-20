@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento keydown</title>
+<body>
+  <h1>keydown</h1>
+  <p>Se activa al presionar una tecla. Escribe en el campo.</p>
+  <input id="objetivo" placeholder="Escribe algo">
+  <p id="resultado">Aun no se presiono una tecla.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar:
+    $("#objetivo").on("keydown", function (event) { $("#resultado").text("Presionaste: " + event.key); });
+  </script>
+</body>
+</html>

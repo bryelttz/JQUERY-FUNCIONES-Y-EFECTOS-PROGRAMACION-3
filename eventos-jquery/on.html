@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Metodo on de jQuery</title>
+<body>
+  <h1>on</h1>
+  <p><code>on()</code> no es un evento: es el metodo de jQuery que usamos para asociar un evento, como <code>click</code>, a una accion.</p>
+  <button id="objetivo">Haz clic</button>
+  <p id="resultado">Aun no hubo clic.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar:
+    $("#objetivo").on("click", function () { $("#resultado").text("on conecto el evento click."); });
+  </script>
+</body>
+</html>

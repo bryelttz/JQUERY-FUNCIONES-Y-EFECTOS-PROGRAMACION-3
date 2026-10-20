@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto slideUp</title>
+<body>
+  <h1>slideUp()</h1>
+  <p>Pliega el elemento hacia arriba hasta ocultarlo.</p>
+  <button id="accion">Plegar</button>
+  <p id="objetivo" style="padding: 20px; background: lightblue;">Este elemento se plegará hacia arriba.</p>
+  <p id="resultado"></p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").slideUp(600, function () {
+        $("#resultado").text("Plegado. El callback se ejecutó al terminar.");
+      });
+    });
+  </script>
+</body>
+</html>

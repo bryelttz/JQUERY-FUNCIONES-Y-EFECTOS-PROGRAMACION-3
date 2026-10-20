@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto fadeToggle</title>
+<body>
+  <h1>fadeToggle()</h1>
+  <p>Alterna entre aparecer y desvanecerse, según el estado actual del elemento.</p>
+  <button id="accion">Alternar desvanecimiento</button>
+  <p id="objetivo" style="padding: 20px; background: lightblue;">Haz clic para desvanecerme o aparecer.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").fadeToggle(600);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto fadeOut</title>
+<body>
+  <h1>fadeOut()</h1>
+  <p>Desvanece el elemento hasta ocultarlo.</p>
+  <button id="accion">Desvanecer</button>
+  <p id="objetivo" style="padding: 20px; background: lightblue;">Voy a desaparecer poco a poco.</p>
+  <p id="resultado"></p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").fadeOut(600, function () {
+        $("#resultado").text("Desvanecido. El callback se ejecutó al terminar.");
+      });
+    });
+  </script>
+</body>
+</html>

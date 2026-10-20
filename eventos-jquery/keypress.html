@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento keypress</title>
+<body>
+  <h1>keypress</h1>
+  <p>Evento antiguo para pulsaciones de teclas. Esta en desuso; para proyectos nuevos usa <code>keydown</code>.</p>
+  <input id="objetivo" placeholder="Prueba escribir una letra">
+  <p id="resultado">Aun no se detecto una pulsacion.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar; algunos navegadores no lo manejan igual:
+    $("#objetivo").on("keypress", function (event) { $("#resultado").text("Pulsaste: " + event.key); });
+  </script>
+</body>
+</html>

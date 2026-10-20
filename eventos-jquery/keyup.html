@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento keyup</title>
+<body>
+  <h1>keyup</h1>
+  <p>Se activa al soltar una tecla. Escribe en el campo.</p>
+  <input id="objetivo" placeholder="Escribe algo">
+  <p id="resultado">Aun no se solto una tecla.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar:
+    $("#objetivo").on("keyup", function (event) { $("#resultado").text("Soltaste: " + event.key); });
+  </script>
+</body>
+</html>

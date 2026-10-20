@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento change</title>
+<body>
+  <h1>change</h1>
+  <p>Se activa cuando confirmas un cambio en el campo, por ejemplo al elegir una opcion.</p>
+  <select id="objetivo">
+    <option value="">Elige un color</option>
+    <option>Azul</option>
+    <option>Verde</option>
+    <option>Rojo</option>
+  </select>
+  <p id="resultado">Aun no cambiaste la opcion.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar:
+    $("#objetivo").on("change", function () { $("#resultado").text("Elegiste: " + $(this).val()); });
+  </script>
+</body>
+</html>

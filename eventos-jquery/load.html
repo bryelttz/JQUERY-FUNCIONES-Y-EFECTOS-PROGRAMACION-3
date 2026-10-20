@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento load</title>
+<body>
+  <h1>load</h1>
+  <p>Se activa cuando la pagina y sus recursos terminan de cargar.</p>
+  <p id="resultado">Descomenta el manejador y recarga la pagina.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente y recarga para probar:
+    $(window).on("load", function () { $("#resultado").text("¡La pagina termino de cargar!"); });
+  </script>
+</body>
+</html>

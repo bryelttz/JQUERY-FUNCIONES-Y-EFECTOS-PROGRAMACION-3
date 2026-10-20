@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Efecto fadeIn</title>
+<body>
+  <h1>fadeIn()</h1>
+  <p>Muestra progresivamente un elemento que está oculto.</p>
+  <button id="accion">Aparecer</button>
+  <p id="objetivo" style="display: none; padding: 20px; background: lightblue;">¡Aparecí poco a poco!</p>
+  <p id="resultado"></p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#accion").on("click", function () {
+      $("#objetivo").fadeIn(600, function () {
+        $("#resultado").text("Apareció. El callback se ejecutó al terminar.");
+      });
+    });
+  </script>
+</body>
+</html>

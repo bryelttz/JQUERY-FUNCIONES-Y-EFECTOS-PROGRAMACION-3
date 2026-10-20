@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Evento submit</title>
+<body>
+  <h1>submit</h1>
+  <p>Se activa al enviar un formulario.</p>
+  <form id="objetivo">
+    <input placeholder="Escribe tu nombre" required>
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="resultado">Todavia no enviaste el formulario.</p>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Descomenta la linea siguiente para probar sin recargar la pagina:
+    $("#objetivo").on("submit", function (event) { event.preventDefault(); $("#resultado").text("¡Formulario enviado!"); });
+  </script>
+</body>
+</html>
